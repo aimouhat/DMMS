@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import ActionForm from './pages/ActionForm';
+import TeamActions from './pages/TeamActions';
 import { ActionProvider } from './context/ActionContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
@@ -23,6 +24,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
             <Route path="/form" element={<PrivateRoute><ActionForm /></PrivateRoute>} />
+            <Route path="/team-actions" element={<PrivateRoute><TeamActions /></PrivateRoute>} />
             <Route path="/admin" element={<PrivateRoute><Admin /></PrivateRoute>} />
             <Route path="/history" element={<PrivateRoute><ActionHistoryPage /></PrivateRoute>} />
           </Routes>
